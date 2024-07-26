@@ -1,0 +1,17 @@
+services:
+  db:
+    image: mysql:8.4
+    restart: always
+    container_name: db
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: pythonopoly
+      MYSQL_USER: aarontan
+      MYSQL_PASSWORD: example
+    volumes:
+      - mysql:/var/lib/mysql
+
+volumes:
+  mysql:
